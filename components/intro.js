@@ -13,7 +13,7 @@ export default function Intro({ profile }) {
           alt={"Profile Picture"}
         />
         <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-          See more of my work {' '}
+          See on map here {' '}
           <a
             href={profile.url}
             className="underline hover:text-success duration-200 transition-colors"
