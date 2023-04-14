@@ -11,7 +11,7 @@ export default function Index({ allExperience, profile }) {
     <>
       <Layout>
         <Head>
-          <title>{profile.personal.unitName}</title>
+          <title>{profile.unitInformation.unitName}</title>
         </Head>
         <Container>
           <Intro profile={profile} />
