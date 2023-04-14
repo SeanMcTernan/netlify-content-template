@@ -1,6 +1,6 @@
 import ImageHandler from './contentful-image'
 
-export default function Company({ name, picture, link }) {
+export default function Company({ featureName, picture, link }) {
   return (
     <div className="flex items-center">
       <div className="relative w-12 h-12 mr-4">
@@ -8,10 +8,10 @@ export default function Company({ name, picture, link }) {
           src={picture.url}
           layout="fill"
           className="full"
-          alt={name}
+          alt={featureName}
         />
       </div>
-      {link ? (<a href={`${link}`} className="hover:text-success duration-200 transition-colors text-xl font-bold">{name}</a>) : (<p className="text-xl font-bold">{name}</p>)}
+      {link ? (<a href={`${link}`} className="hover:text-success duration-200 transition-colors text-xl font-bold">{featureName}</a>) : (<p className="text-xl font-bold">{featureName}</p>)}
     </div>
   )
 }

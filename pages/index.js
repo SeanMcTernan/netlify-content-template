@@ -1,8 +1,8 @@
 import Container from '../components/container'
-import ExperienceList from '../components/experience-list'
+import FeatureList from '../components/feature-list'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllExperiencessForHome, getUnitForHome } from '../lib/api'
+import { getAllFeaturesForHome, getUnitForHome } from '../lib/api'
 import Head from 'next/head'
 
 
@@ -15,7 +15,7 @@ export default function Index({ allExperience, unit }) {
         </Head>
         <Container>
           <Intro unit={unit} />
-          <ExperienceList experiences={allExperience} />
+          <FeatureList features={allExperience} />
         </Container>
       </Layout>
     </>
@@ -24,7 +24,7 @@ export default function Index({ allExperience, unit }) {
 
 export async function getStaticProps() {
   const unit = await getUnitForHome()
-  const allExperience = await getAllExperiencessForHome()
+  const allExperience = await getAllFeaturesForHome()
   return {
     props: { allExperience, unit },
   }

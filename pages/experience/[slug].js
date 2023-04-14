@@ -2,12 +2,12 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
-import ExperienceBody from '../../components/experience-body'
+import FeatureBody from '../../components/feature-body'
 import Header from '../../components/header'
-import ExperienceHeader from '../../components/experience-header'
+import FeatureHeader from '../../components/feature-header'
 import Layout from '../../components/layout'
-import { getAllExperiencesWithSlug, getExperience } from '../../lib/api'
-import ExperienceTitle from '../../components/experience-title'
+import { getAllFeaturessWithSlug, getFeature } from '../../lib/api'
+import FeatureTitle from '../../components/feature-title'
 
 export default function Experience({ experience }) {
   const router = useRouter()
@@ -21,7 +21,7 @@ export default function Experience({ experience }) {
       <Container>
         <Header />
         {router.isFallback ? (
-          <ExperienceTitle>Loading…</ExperienceTitle>
+          <FeatureTitle>Loading…</FeatureTitle>
         ) : (
           <>
             <article>
@@ -30,11 +30,11 @@ export default function Experience({ experience }) {
                   {experience.company.name}
                 </title>
               </Head>
-              <ExperienceHeader
-                title={experience.company.name}
+              <FeatureHeader
+                featureName={experience.featureName}
                 company={experience.company}
               />
-              <ExperienceBody description={experience.description} />
+              <FeatureBody description={experience.description} />
             </article>
           </>
         )}
@@ -44,7 +44,7 @@ export default function Experience({ experience }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = await getExperience(params.slug)
+  const data = await getFeature(params.slug)
 
   return {
     props: {
@@ -54,7 +54,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const allExperiences = await getAllExperiencesWithSlug()
+  const allExperiences = await getAllFeaturessWithSlug()
   return {
     paths: allExperiences?.map(({ slug }) => `/experience/${slug}`) ?? [],
     fallback: true,
