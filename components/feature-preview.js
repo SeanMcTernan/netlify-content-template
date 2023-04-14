@@ -9,9 +9,9 @@ export default function FeaturePreview({
   return (
     <div>
       <div className="mb-5">
-        {featureName && <Company featureName={featureName} picture={featureGraphic} link={`experience/${slug}`} />}
+        {featureName && <Company featureName={featureName} picture={featureGraphic} link={`features/${slug}`} />}
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt} <a href={`experience/${slug}`} className="underline hover:text-success duration-200 transition-colors">Read More.</a></p>
+      <p className="text-lg leading-relaxed mb-4">{excerpt} <a href={`features/${slug}`} className="underline hover:text-success duration-200 transition-colors">Read More.</a></p>
     </div>
   )
 }

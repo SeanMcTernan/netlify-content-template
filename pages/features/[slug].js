@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const allExperiences = await getAllFeaturessWithSlug()
   return {
-    paths: allExperiences?.map(({ slug }) => `/experience/${slug}`) ?? [],
+    paths: allExperiences?.map(({ slug }) => `/features/${slug}`) ?? [],
     fallback: true,
   }
 }
