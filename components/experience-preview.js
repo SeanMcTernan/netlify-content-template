@@ -1,9 +1,6 @@
-import Link from 'next/link'
 import Company from './company'
-import DateComponent from './date'
 
 export default function ExperiencePreview({
-  title,
   excerpt,
   company,
   slug,

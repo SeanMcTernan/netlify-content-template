@@ -27,13 +27,11 @@ export default function Experience({ experience }) {
             <article>
               <Head>
                 <title>
-                  {experience.jobTitle}
+                  {experience.company.name}
                 </title>
               </Head>
               <ExperienceHeader
-                title={experience.jobTitle}
-                startDate={experience.startDate}
-                endDate={experience.endDate}
+                title={experience.company.name}
                 company={experience.company}
               />
               <ExperienceBody description={experience.description} />
