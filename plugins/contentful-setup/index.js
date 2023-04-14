@@ -25,7 +25,7 @@ module.exports = {
 
 
         const checkForContent = (items) => {
-            const contentModel = ["company", "unitInformation", "profile", 'experience']
+            const contentModel = ["company", "unitInformation", "unit", 'experience']
             const itemsIds = items.map(item => item.sys.id)
             const result = contentModel.every(item => itemsIds.includes(item))
             return result
