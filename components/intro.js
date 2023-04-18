@@ -13,6 +13,7 @@ export default function Intro({ unit }) {
           alt={"Unit Picture"}
         />
         <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
+          Leasing Manager {' '}
           {unit.unitInformation.leasingManagerName} {' '}
           <a
             href={`mailto:${unit.unitInformation.email}`}

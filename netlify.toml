@@ -6,5 +6,5 @@ CONTENTFUL_ENVIRONMENT_ID = "CONTENTFUL_ENVIRONMENT_ID"
 CONTENTFUL_MANAGEMENT_TOKEN = "CONTENTFUL_MANAGEMENT_TOKEN"
 CONTENTFUL_REVALIDATE_SECRET = "CONTENTFUL_REVALIDATE_SECRET"
 
-[[plugins]]
-package = "/plugins/contentful-setup"
+# [[plugins]]
+# package = "/plugins/contentful-setup"
