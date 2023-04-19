@@ -2,7 +2,7 @@ const spaceImport = require('contentful-import')
 const exportFile = require('./export.json')
 const contentful = require('contentful-management')
 
-const { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN, CONTENTFUL_ENVIRONMENT_ID } = process.env
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN, CONTENTFUL_ENVIRONMENT } = process.env
 
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
 
         const getContentfulItems = async () => {
             const space = await client.getSpace(CONTENTFUL_SPACE_ID)
-            const environment = await space.getEnvironment(CONTENTFUL_ENVIRONMENT_ID)
+            const environment = await space.getEnvironment(CONTENTFUL_ENVIRONMENT)
             const response = await environment.getContentTypes()
             try {
                 return response.items
@@ -31,12 +31,12 @@ module.exports = {
             return result
         }
 
-        if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_MANAGEMENT_TOKEN || !CONTENTFUL_ENVIRONMENT_ID) {
+        if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_MANAGEMENT_TOKEN || !CONTENTFUL_ENVIRONMENT) {
             throw new Error(
                 [
                     'Parameters missing...',
                     'Please add the following environment variables to your Netlify site:',
-                    'CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN, CONTENTFUL_ENVIRONMENT_ID',
+                    'CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN, CONTENTFUL_ENVIRONMENT',
                 ].join('\n')
             )
         }
